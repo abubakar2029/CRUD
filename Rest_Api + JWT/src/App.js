@@ -2,17 +2,24 @@ import "./App.css";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import PatientRegistration from "./Components/PatientRegistration/PatientRegistration";
-import Records from "./Pages/Records/Records";
-import logo from "./logo.svg";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import About from "./Pages/About/About";
+import LoginPage from "./Pages/Login/Login";
+import SignupPage from "./Pages/Signup/Signup";
+import Navbar from "./Components/Navbar/Navbar";
+import HomePage from "./Pages/HomePage/HomePage";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+        <Navbar />
         <Routes>
-          <Route path="/register" element={<PatientRegistration />} />
-          <Route path="/records" element={<Records />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
         </Routes>
       </BrowserRouter>
     </div>
